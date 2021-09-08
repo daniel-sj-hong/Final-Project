@@ -3,7 +3,15 @@ import React from 'react';
 export default function Header(props) {
   return (
     <>
-      <h1 className="header">Choice.ly</h1>
+      <div className="container">
+        <div className="row">
+          <div className="col-full">
+            <nav className="justify-center">
+              <p className="header">Choice.ly</p>
+            </nav>
+          </div>
+        </div>
+      </div>
     </>
   );
 }

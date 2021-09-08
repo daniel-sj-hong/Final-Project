@@ -1,4 +1,23 @@
+.container {
+  background-color: #5f9aa4;
+}
+
 .header {
   font-family: 'Oleo Script', cursive;
+  color: white;
   font-size: 40px;
+  margin: 0;
+}
+
+.row {
+  display: flex;
+}
+
+.col-full {
+  width: 100vw;
+}
+
+.justify-center {
+  display: flex;
+  justify-content: center;
 }
