@@ -1,0 +1,15 @@
+insert into "Categories" ("name", "icon")
+values ('Burgers', '/images/hamburger.png'),
+       ('Pizza', '/images/pizza.png'),
+       ('Sandwiches', '/images/sandwich.png'),
+       ('Mexican', '/images/mexican.png'),
+       ('Chicken', '/images/chicken.png'),
+       ('Chinese', '/images/chinese.png'),
+       ('Italian', '/images/italian.png'),
+       ('Korean', '/images/korean.png'),
+       ('Japanese', '/images/japanese.png'),
+       ('Vietnamese', '/images/vietnamese.png'),
+       ('Thai', '/images/thai.png'),
+       ('Mediterranean', '/images/mediterranean.png'),
+       ('Indian', '/images/indian.png'),
+       ('Dessert', '/images/dessert')
