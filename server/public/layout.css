@@ -1,0 +1,30 @@
+.container {
+  max-width: 600px;
+
+  /* max-height: ; */
+  margin: 0 auto;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 1rem 0;
+}
+
+.col-full {
+  width: 100vw;
+}
+
+.col-half {
+  width: 50%;
+}
+
+.col-75 {
+  width: 75%;
+}
+
+@media screen and (min-width: 768px) {
+  input {
+    width: 400px;
+  }
+}

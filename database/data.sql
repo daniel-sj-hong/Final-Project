@@ -12,4 +12,4 @@ values ('Burgers', '/images/hamburger.png'),
        ('Thai', '/images/thai.png'),
        ('Mediterranean', '/images/mediterranean.png'),
        ('Indian', '/images/indian.png'),
-       ('Dessert', '/images/dessert')
+       ('Dessert', '/images/dessert.png')
