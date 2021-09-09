@@ -14,12 +14,10 @@
 }
 
 .justify-center {
-  display: flex;
   justify-content: center;
 }
 
 .center-all {
-  display: flex;
   justify-content: center;
   align-items: center;
 }
@@ -37,10 +35,7 @@ input {
 
 .categories {
   background-color: #e1f6fc;
-
-  /* max-width: 400px;
-  max-height: 600px; */
-  width: 400px;
+  width: 500px;
   height: 600px;
   margin-top: 20px;
   border-radius: 20px;
@@ -60,8 +55,8 @@ input {
   height: 30px;
 }
 
-.genre-height {
-  height: 40px;
+.height-category {
+  height: 30px;
 }
 
 .space-evenly {
@@ -70,7 +65,39 @@ input {
 }
 
 .border-category {
-  border-radius: 15px;
+  border-radius: 20px;
   background-color: white;
-  border: 1px solid black;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.align-center {
+  text-align: center;
+}
+
+.height-and-width {
+  height: 40px;
+  width: 160px;
+}
+
+.row-reverse {
+  flex-direction: row-reverse;
+}
+
+.remove-margin {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.row-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.margin-tb2 {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }

@@ -4,7 +4,7 @@ export default function Header(props) {
   return (
     <>
       <nav className="header-color">
-        <p className="header">Choice.ly</p>
+        <p className="header align-center">Choice.ly</p>
       </nav>
     </>
   );
