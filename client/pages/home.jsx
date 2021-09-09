@@ -12,14 +12,11 @@ export default class Home extends React.Component {
   componentDidMount() {
     fetch('/api/categories')
       .then(response => {
-        console.log(response);
         return response.json();
       })
       .then(result => {
         this.setState({ categories: result }, () => {
-          console.log(this.state.categories);
         });
-        console.log(result);
       })
       .catch(err => {
         console.error(err);
@@ -54,8 +51,8 @@ export default class Home extends React.Component {
       <>
         <Header />
         <div className="container margin-top-20">
-          <div className="row">
-            <form className="justify-center">
+          <div className="row justify-center">
+            <form>
               <input type="text" placeholder="Location" required></input>
             </form>
           </div>
@@ -85,17 +82,6 @@ export default class Home extends React.Component {
             </div>
           </div>
         </div>
-
-        {/* <div className="container categories flex justify-start">
-          <div className="row justify-around">
-            <button>test1</button>
-            <button>test2</button>
-          </div>
-          <div className="row justify-around">
-            <button>test3</button>
-            <button>test4</button>
-          </div>
-        </div> */}
       </>
     );
   }
