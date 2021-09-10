@@ -53,22 +53,8 @@ input {
   }
 }
 
-/* .justify-start {
-  justify-content: flex-start;
-} */
-
-.icon {
-  width: 30px;
-  height: 30px;
-}
-
 .height-category {
   height: 30px;
-}
-
-.space-evenly {
-  justify-content: space-evenly;
-  align-items: center;
 }
 
 .border-category {
@@ -81,6 +67,7 @@ input {
 
 .border-category:hover {
   background-color: #d9e8eb;
+  cursor: pointer;
 }
 
 .align-center {
