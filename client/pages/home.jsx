@@ -1,12 +1,15 @@
 import React from 'react';
 import Header from './components/header';
+import FoodButton from './components/buttons';
 
 export default class Home extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      categories: []
+      categories: [],
+      selected: ''
     };
+    this.highlighted = this.highlighted.bind(this);
   }
 
   componentDidMount() {
@@ -23,30 +26,16 @@ export default class Home extends React.Component {
       });
   }
 
-  render() {
-    const foodGenre = this.state.categories.map(element => {
-      return (
-        <div className="col-half" key={element.name}>
-          <div className="row center-all">
-            <div className="height-and-width">
-              <button key={element.name} type="radio" className="border-category">
-                <div className="row center-all">
-                  <div className="col-half">
-                    <h3 className="remove-margin">{element.name}</h3>
-                  </div>
-                  <div className="col-half">
-                    <div className="row row-reverse">
-                      <img src={element.icon} className="height-category" />
-                    </div>
-                  </div>
-                </div>
-              </button>
-            </div>
-          </div>
-        </div>
-      );
+  highlighted(target) {
+    if (this.state.selected === target) {
+      this.setState({ selected: '' });
+    } else {
+      this.setState({ selected: target });
     }
-    );
+  }
+
+  render() {
+    const foodGenre = this.state.categories.map(element => <FoodButton key={element.name} name={element.name} icon={element.icon} state={this.state.selected} highlighted={this.highlighted} />);
     return (
       <>
         <Header />

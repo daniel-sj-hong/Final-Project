@@ -31,6 +31,7 @@ input {
   padding-left: 10px;
   border: 1px solid;
   width: 200px;
+  height: 30px;
 }
 
 .categories {
@@ -46,15 +47,15 @@ input {
   .categories {
     width: 500px;
   }
+
+  input {
+    width: 250px;
+  }
 }
 
-.justify-around {
-  justify-content: space-around;
-}
-
-.justify-start {
+/* .justify-start {
   justify-content: flex-start;
-}
+} */
 
 .icon {
   width: 30px;
@@ -76,6 +77,10 @@ input {
   width: 100%;
   height: 100%;
   border: none;
+}
+
+.border-category:hover {
+  background-color: #d9e8eb;
 }
 
 .align-center {
@@ -106,4 +111,8 @@ input {
 .margin-tb2 {
   margin-top: 2rem;
   margin-bottom: 2rem;
+}
+
+.selected {
+  background-color: #d9e8eb;
 }
