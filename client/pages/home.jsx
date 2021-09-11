@@ -35,8 +35,10 @@ export default class Home extends React.Component {
 
   highlighted(target) {
     if (this.state.selected === target) {
+      event.preventDefault();
       this.setState({ selected: '' });
     } else {
+      event.preventDefault();
       this.setState({ selected: target });
     }
   }
