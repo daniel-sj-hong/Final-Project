@@ -38,13 +38,6 @@ app.get('/api/categories', (req, res) => {
     });
 });
 
-// app.get('https://api.yelp.com/v3/businesses/WavvLdfdP6g8aZTtbBQHTw', {
-//   method: 'GET',
-//   headers: {
-//     'Authorization': 'Bearer ZZzEoImZA2NvtiETYewLjKxwPGzlcPLRidq6cUNAeGNWYUIhflVhUDtFooHe6Fxa5Hm9H-Iq4Cc6BN-sttsdxsyZ-6F6_gWpjNuAjfC5d0ATT7YHX1MTYnJKGKElYXYx'
-//   }
-// }
-
 app.get('/api/test', (req, res, next) => {
   client.search({
     term: 'Korean',
