@@ -13,6 +13,10 @@
   margin: 0;
 }
 
+.text-right {
+  text-align: right;
+}
+
 .justify-center {
   justify-content: center;
 }
@@ -40,7 +44,7 @@ input {
   height: 600px;
   margin-top: 20px;
   border-radius: 20px;
-  flex-direction: column;
+  flex-wrap: wrap;
 }
 
 @media screen and (min-width: 768px) {
@@ -63,20 +67,36 @@ input {
   width: 100%;
   height: 100%;
   border: none;
+  color: inherit;
 }
 
 .border-category:hover {
-  background-color: #d9e8eb;
   cursor: pointer;
+}
+
+.border-category:active {
+  transform: translateY(0.25rem);
 }
 
 .align-center {
   text-align: center;
 }
 
-.height-and-width {
+.food-category {
   height: 40px;
   width: 160px;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.pr-1 {
+  padding-right: 0.25rem;
+}
+
+.pl-2 {
+  padding-left: 0.5rem;
 }
 
 .row-reverse {

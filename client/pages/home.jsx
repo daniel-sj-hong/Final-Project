@@ -46,30 +46,8 @@ export default class Home extends React.Component {
             </form>
           </div>
         </div>
-        <div className="container categories flex justify-start">
-          <div className="row-column margin-tb2">
-            <div className="row">
-              {[foodGenre[0], foodGenre[7]]}
-            </div>
-            <div className="row">
-              {[foodGenre[1], foodGenre[8]]}
-            </div>
-            <div className="row">
-              {[foodGenre[2], foodGenre[9]]}
-            </div>
-            <div className="row">
-              {[foodGenre[3], foodGenre[10]]}
-            </div>
-            <div className="row">
-              {[foodGenre[4], foodGenre[11]]}
-            </div>
-            <div className="row">
-              {[foodGenre[5], foodGenre[12]]}
-            </div>
-            <div className="row">
-              {[foodGenre[6], foodGenre[13]]}
-            </div>
-          </div>
+        <div className="container categories flex">
+          {foodGenre}
         </div>
       </>
     );
