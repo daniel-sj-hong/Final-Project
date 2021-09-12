@@ -38,13 +38,16 @@ app.get('/api/categories', (req, res) => {
     });
 });
 
-app.get('/api/test', (req, res, next) => {
+app.get('/api/restaurants', (req, res, next) => {
+  const { category, location } = req.query;
   client.search({
-    term: 'Korean',
-    location: 'Irvine'
-  }).then(response => {
-    console.log(response.jsonBody.businesses);
-  }).catch(err => next(err));
+    term: category,
+    location: location
+  })
+    .then(response => {
+      res.status(200).send(response.jsonBody.businesses);
+    })
+    .catch(err => next(err));
 });
 
 app.use(errorMiddleware);
