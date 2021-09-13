@@ -38,7 +38,7 @@ export default class SearchResults extends React.Component {
           <h1>search page</h1>
         </div>
 
-        <div className="container search-results-container">
+        <div className="container search-results-container restrict-height">
         {
         this.state.searchResults.map(restaurant =>
           <ul className="row justify-center" key={restaurant.id}>
