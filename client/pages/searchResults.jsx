@@ -35,21 +35,21 @@ export default class SearchResults extends React.Component {
       <>
         <Header />
         <div className="row justify-center">
-          <h1>search page</h1>
+          <h2 className="search-result-text">Search Results</h2>
         </div>
 
         <div className="container search-results-container restrict-height">
+          <ul className="row justify-center">
         {
         this.state.searchResults.map(restaurant =>
-          <ul className="row justify-center" key={restaurant.id}>
-            <li className="col-90">
+            <li className="col-90" key={restaurant.id}>
               <div className="row padding-tb10">
-                <div className="col-20 align-center flex center-all">
-                  <div className="flex col-90 max-height-90 center-all ">
-                    <img className="col-100 border-radius" src={restaurant.image_url} />
+                <div className="col-20 flex center-all">
+                  <div className="flex center-all">
+                    <img className="image-size-adjust border-radius" src={restaurant.image_url} />
                   </div>
                 </div>
-                <div className="col-80">
+                <div className="col-80 center-all">
                   <div className="row">
                     {restaurant.name}
                   </div>
@@ -58,15 +58,15 @@ export default class SearchResults extends React.Component {
                     <div className="col-thirds">{restaurant.review_count} reviews</div>
                     <div className="col-thirds">{restaurant.price}</div>
                   </div>
-                  <div className="row">
+                  <div className="row overflow">
                     {`${restaurant.location.display_address[0]} ${restaurant.location.display_address[1]}`}
                   </div>
                 </div>
               </div>
             </li>
-          </ul>
         )
       }
+        </ul>
       </div>
       </>
     );
