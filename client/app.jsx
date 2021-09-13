@@ -56,6 +56,7 @@ export default class App extends React.Component {
       .then(restaurants => {
         this.setState({ searchResults: restaurants });
         window.location.hash = '#search';
+        console.log(restaurants);
       });
   }
 

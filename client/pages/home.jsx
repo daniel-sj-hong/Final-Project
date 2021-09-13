@@ -1,7 +1,6 @@
 import React from 'react';
 import Header from '../components/header';
 import FoodButton from '../components/buttons';
-// import Submit from './components/submit';
 
 export default class Home extends React.Component {
   constructor(props) {
@@ -40,7 +39,7 @@ export default class Home extends React.Component {
             {foodGenre}
           </div>
           <div className="row justify-center">
-            <button type="submit">Search</button>
+            <button type="submit" className="submit-button">Search</button>
           </div>
         </form>
       </>
