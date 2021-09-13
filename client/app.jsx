@@ -10,7 +10,6 @@ export default class App extends React.Component {
       categories: [],
       selected: '',
       location: '',
-      searchResults: [],
       route: parseRoute(window.location.hash)
     };
     this.highlighted = this.highlighted.bind(this);
@@ -51,13 +50,7 @@ export default class App extends React.Component {
 
   handleSearch() {
     event.preventDefault();
-    fetch(`/api/restaurants?category=${this.state.selected}&location=${this.state.location}`)
-      .then(response => response.json())
-      .then(restaurants => {
-        this.setState({ searchResults: restaurants });
-        window.location.hash = '#search';
-        console.log(restaurants);
-      });
+    window.location.hash = `#search?category=${this.state.selected}&location=${this.state.location}`;
   }
 
   render() {

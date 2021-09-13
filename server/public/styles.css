@@ -193,6 +193,11 @@ li {
   margin-left: 5px;
 }
 
+.padding-tb10 {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
 @media screen and (min-width: 768px) {
   li {
     font-size: 20px;
