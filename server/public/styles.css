@@ -187,29 +187,10 @@ li {
   max-height: 90%;
 }
 
-.col-100 {
-  width: 100%;
-}
-
-.test {
-  width: 100%;
-  border-radius: 15px;
-}
-
-.margin-left {
-  margin-left: 5px;
-}
-
 .padding-tb10 {
   padding-top: 10px;
   padding-bottom: 10px;
 }
-
-/* .search-result {
-  background-color: white;
-  width: 90%;
-  height: 12%;
-} */
 
 .border-radius {
   border-radius: 1rem;
