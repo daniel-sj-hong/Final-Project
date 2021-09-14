@@ -1,5 +1,4 @@
 import React from 'react';
-import Home from './home';
 import Header from '../components/header';
 import ReactStars from 'react-rating-stars-component';
 
@@ -11,18 +10,8 @@ export default class SearchResults extends React.Component {
     };
   }
 
-  renderPage() {
-    const { route } = this.state;
-    if (route.path === '') {
-      return <Home />;
-    }
-    if (route.path === 'search') {
-      return <SearchResults />;
-    }
-  }
-
   componentDidMount() {
-    fetch(`/api/restaurants?category=${window.location.hash.substring(window.location.hash.indexOf('=') + 1, window.location.hash.indexOf('&'))}&location=${window.location.hash.substring(window.location.hash.lastIndexOf('=') + 1)}`)
+    fetch(`/api/restaurants?${this.props.params.toString()}`)
       .then(response => response.json())
       .then(restaurants => {
         this.setState({ searchResults: restaurants });
@@ -72,20 +61,3 @@ export default class SearchResults extends React.Component {
     );
   }
 }
-
-// <ul>
-//   <li>
-//     <div className=
-//     <div className="row">
-//       Cluck Chicken
-//     </div>
-//     <div className="row">
-//       <div className="col-thirds">*****</div>
-//       <div className="col-thirds">361 reviews</div>
-//       <div className="col-thirds">$$</div>
-//     </div>
-//     <div className="row">
-//       17915 MacArthur Blvd Irvine, CA 92614
-//     </div>
-//   </li>
-// </ul>
