@@ -5,7 +5,6 @@ const staticMiddleware = require('./static-middleware');
 const pg = require('pg');
 const yelp = require('yelp-fusion');
 const client = yelp.client(process.env.YELP_API_KEY);
-// const fetch = require('node-fetch');
 const app = express();
 
 const db = new pg.Pool({
