@@ -1,6 +1,7 @@
 import React from 'react';
 import Home from './home';
 import Header from '../components/header';
+import ReactStars from 'react-rating-stars-component';
 
 export default class SearchResults extends React.Component {
   constructor(props) {
@@ -54,7 +55,7 @@ export default class SearchResults extends React.Component {
                     {restaurant.name}
                   </div>
                   <div className="row">
-                    <div className="col-thirds">{restaurant.rating}</div>
+                  <div className="col-thirds"><ReactStars size={13} value={restaurant.rating} edit={false} isHalf={true} activeColor="#000" /></div>
                     <div className="col-thirds">{restaurant.review_count} reviews</div>
                     <div className="col-thirds">{restaurant.price}</div>
                   </div>
