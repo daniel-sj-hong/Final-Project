@@ -13,10 +13,6 @@
   margin: 0;
 }
 
-.text-right {
-  text-align: right;
-}
-
 .justify-center {
   justify-content: center;
 }
@@ -106,25 +102,9 @@ input {
   padding-left: 0.5rem;
 }
 
-.row-reverse {
-  flex-direction: row-reverse;
-}
-
 .remove-margin {
   margin-top: 0;
   margin-bottom: 0;
-}
-
-.row-column {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
-}
-
-.margin-tb2 {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
 }
 
 .selected {
@@ -181,10 +161,6 @@ li {
 
 .col-90 {
   width: 90%;
-}
-
-.max-height-90 {
-  max-height: 90%;
 }
 
 .padding-tb10 {
