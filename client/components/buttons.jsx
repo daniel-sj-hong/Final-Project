@@ -2,7 +2,6 @@ import React from 'react';
 
 export default function FoodButton(props) {
   return (
-
       <div className="col-half center-all flex">
           <div className="food-category">
             <button name={props.name} className={props.state === props.name ? 'border-category selected' : 'border-category'} onClick={ () => props.highlighted(props.name)}>
@@ -13,6 +12,5 @@ export default function FoodButton(props) {
             </button>
           </div>
       </div>
-
   );
 }

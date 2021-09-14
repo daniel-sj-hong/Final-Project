@@ -3,6 +3,9 @@ const express = require('express');
 const errorMiddleware = require('./error-middleware');
 const staticMiddleware = require('./static-middleware');
 const pg = require('pg');
+const yelp = require('yelp-fusion');
+const client = yelp.client(process.env.YELP_API_KEY);
+// const fetch = require('node-fetch');
 const app = express();
 
 const db = new pg.Pool({
@@ -33,6 +36,18 @@ app.get('/api/categories', (req, res) => {
         error: 'An unexpected error occurred.'
       });
     });
+});
+
+app.get('/api/restaurants', (req, res, next) => {
+  const { category, location } = req.query;
+  client.search({
+    term: category,
+    location: location
+  })
+    .then(response => {
+      res.status(200).send(response.jsonBody.businesses);
+    })
+    .catch(err => next(err));
 });
 
 app.use(errorMiddleware);

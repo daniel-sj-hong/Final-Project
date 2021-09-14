@@ -1,15 +1,13 @@
 import React from 'react';
-import Header from './components/header';
-import FoodButton from './components/buttons';
+import Header from '../components/header';
+import FoodButton from '../components/buttons';
 
 export default class Home extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      categories: [],
-      selected: ''
+      categories: []
     };
-    this.highlighted = this.highlighted.bind(this);
   }
 
   componentDidMount() {
@@ -26,29 +24,24 @@ export default class Home extends React.Component {
       });
   }
 
-  highlighted(target) {
-    if (this.state.selected === target) {
-      this.setState({ selected: '' });
-    } else {
-      this.setState({ selected: target });
-    }
-  }
-
   render() {
-    const foodGenre = this.state.categories.map(element => <FoodButton key={element.name} name={element.name} icon={element.icon} state={this.state.selected} highlighted={this.highlighted} />);
+    const foodGenre = this.state.categories.map(element => <FoodButton key={element.name} name={element.name} icon={element.icon} state={this.props.selected} highlighted={this.props.highlighted} />);
     return (
       <>
         <Header />
-        <div className="container margin-top-20">
-          <div className="row justify-center">
-            <form>
-              <input type="text" placeholder="Location" required></input>
-            </form>
+        <form onSubmit={this.props.handleSearch}>
+          <div className="container margin-top-20">
+            <div className="row justify-center">
+                <input onChange={this.props.locationChange} type="text" placeholder="Location" required></input>
+            </div>
           </div>
-        </div>
-        <div className="container categories flex">
-          {foodGenre}
-        </div>
+          <div className="container categories flex">
+            {foodGenre}
+          </div>
+          <div className="row justify-center">
+            <button type="submit" className="submit-button">Search</button>
+          </div>
+        </form>
       </>
     );
   }
