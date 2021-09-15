@@ -1,3 +1,8 @@
+a {
+  text-decoration: none;
+  color: black;
+}
+
 .header-color {
   background-color: #5f9aa4;
 }
@@ -137,6 +142,21 @@ li {
   border-radius: 20px;
   margin-top: 10px;
   font-weight: bold;
+  animation: slide-up 1s ease;
+}
+
+@keyframes slide-up {
+  0% {
+    transform: translateY(90px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+body {
+  overflow: hidden;
 }
 
 .overflow {
@@ -180,7 +200,7 @@ li {
 @media screen and (min-width: 768px) {
   li {
     font-size: 16px;
-    margin-top: 15px;
+    margin-top: 14px;
   }
 
   .image-size-adjust {

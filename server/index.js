@@ -49,6 +49,14 @@ app.get('/api/restaurants', (req, res, next) => {
     .catch(err => next(err));
 });
 
+app.get('/api/reviews', (req, res, next) => {
+  client.reviews(req.query.alias).then(response => {
+    console.log(response.jsonBody.reviews);
+    res.status(200).send(response.jsonBody.reviews);
+  })
+    .catch(err => next(err));
+});
+
 app.use(errorMiddleware);
 
 app.listen(process.env.PORT, () => {

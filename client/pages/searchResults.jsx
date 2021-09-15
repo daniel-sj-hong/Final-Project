@@ -15,6 +15,7 @@ export default class SearchResults extends React.Component {
       .then(response => response.json())
       .then(restaurants => {
         this.setState({ searchResults: restaurants });
+        console.log(restaurants);
       });
   }
 
@@ -32,6 +33,7 @@ export default class SearchResults extends React.Component {
         {
         this.state.searchResults.map(restaurant =>
             <li className="col-90" key={restaurant.id}>
+              <a href={`#details?alias=${restaurant.alias}`}>
               <div className="row padding-tb10">
                 <div className="col-20 flex center-all">
                   <div className="flex center-all">
@@ -43,7 +45,7 @@ export default class SearchResults extends React.Component {
                     {restaurant.name}
                   </div>
                   <div className="row">
-                  <div className="col-thirds"><ReactStars size={13} value={restaurant.rating} edit={false} isHalf={true} activeColor="#000" /></div>
+                  <div className="col-thirds"><ReactStars size={15} value={restaurant.rating} edit={false} isHalf={true} activeColor="#000" /></div>
                     <div className="col-thirds">{restaurant.review_count} reviews</div>
                     <div className="col-thirds">{restaurant.price}</div>
                   </div>
@@ -52,6 +54,7 @@ export default class SearchResults extends React.Component {
                   </div>
                 </div>
               </div>
+              </a>
             </li>
         )
       }
