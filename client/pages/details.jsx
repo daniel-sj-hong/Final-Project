@@ -12,13 +12,10 @@ export default class Details extends React.Component {
 
   componentDidMount() {
     fetch(`/api/reviews?${this.props.params.toString()}`)
-      .then(response => {
-        // response.json().PromiseResult;
-        console.log(response.json());
-        console.log(response.json().PromiseResult);
-      })
+      .then(response => response.json())
       .then(comments => {
         this.setState({ reviews: comments });
+        console.log(comments);
       });
   }
 
@@ -26,6 +23,7 @@ export default class Details extends React.Component {
     return (
       <>
         <Header />
+        <div className="container search-results-container restrict-height margin-top-50"></div>
       </>
     );
   }

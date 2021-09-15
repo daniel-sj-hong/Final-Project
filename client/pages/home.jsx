@@ -54,7 +54,7 @@ export default class Home extends React.Component {
         <form onSubmit={this.handleSearch}>
           <div className="container margin-top-20">
             <div className="row justify-center">
-                <input value={this.state.location} onChange={this.locationChange} type="text" placeholder="Location" required></input>
+              <input value={this.state.location} onChange={this.locationChange} type="text" placeholder="Location" required></input>
             </div>
           </div>
           <div className="container categories flex">

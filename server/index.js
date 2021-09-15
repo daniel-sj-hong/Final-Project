@@ -51,7 +51,6 @@ app.get('/api/restaurants', (req, res, next) => {
 
 app.get('/api/reviews', (req, res, next) => {
   client.reviews(req.query.alias).then(response => {
-    console.log(response.jsonBody.reviews);
     res.status(200).send(response.jsonBody.reviews);
   })
     .catch(err => next(err));
