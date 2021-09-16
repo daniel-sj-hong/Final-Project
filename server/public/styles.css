@@ -197,6 +197,10 @@ body {
   width: 50px;
 }
 
+.margin-top-50 {
+  margin-top: 50px;
+}
+
 @media screen and (min-width: 768px) {
   li {
     font-size: 16px;
@@ -224,8 +228,4 @@ body {
     margin-bottom: 8px;
     margin-right: 13em;
   }
-}
-
-.margin-top-50 {
-  margin-top: 50px;
 }

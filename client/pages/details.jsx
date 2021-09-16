@@ -6,16 +6,23 @@ export default class Details extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      reviews: []
+      reviews: [],
+      searchResults: []
     };
   }
 
   componentDidMount() {
-    fetch(`/api/reviews?${this.props.params.toString()}`)
-      .then(response => response.json())
-      .then(comments => {
-        this.setState({ reviews: comments });
-        console.log(comments);
+    Promise.all([
+      fetch(`/api/reviews?${this.props.params.toString()}`).then(response => response.json()),
+      fetch(`/api/restaurants?${this.props.params.toString()}`).then(response => response.json())
+    ])
+      .then(([comments, restaurants]) => {
+        this.setState({
+          reviews: comments,
+          searchResults: restaurants
+        });
+        console.log('reviews:', comments);
+        console.log('searchResults:', restaurants);
       });
   }
 
@@ -23,7 +30,9 @@ export default class Details extends React.Component {
     return (
       <>
         <Header />
-        <div className="container search-results-container restrict-height margin-top-50"></div>
+        <div className="container search-results-container restrict-height margin-top-50">
+
+        </div>
       </>
     );
   }

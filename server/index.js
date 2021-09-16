@@ -38,6 +38,7 @@ app.get('/api/categories', (req, res) => {
 });
 
 app.get('/api/restaurants', (req, res, next) => {
+  console.log(req);
   const { category, location } = req.query;
   client.search({
     term: category,
