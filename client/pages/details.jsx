@@ -14,7 +14,7 @@ export default class Details extends React.Component {
   componentDidMount() {
     Promise.all([
       fetch(`/api/reviews?${this.props.params.toString()}`).then(response => response.json()),
-      fetch(`/api/restaurants?${this.props.params.toString()}`).then(response => response.json())
+      fetch(`/api/business?${this.props.params.toString()}`).then(response => response.json())
     ])
       .then(([comments, restaurants]) => {
         this.setState({
@@ -31,7 +31,15 @@ export default class Details extends React.Component {
       <>
         <Header />
         <div className="container search-results-container restrict-height margin-top-50">
-
+          <div className="row">
+            <div className="col-full flex justify-center">
+              <h1>{this.state.searchResults.name}</h1>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-one-third">
+            </div>
+          </div>
         </div>
       </>
     );

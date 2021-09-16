@@ -37,8 +37,14 @@ app.get('/api/categories', (req, res) => {
     });
 });
 
+app.get('/api/business', (req, res, next) => {
+  client.business(req.query.alias).then(response => {
+    res.status(200).json(response.jsonBody);
+  })
+    .catch(err => next(err));
+});
+
 app.get('/api/restaurants', (req, res, next) => {
-  console.log(req);
   const { category, location } = req.query;
   client.search({
     term: category,
