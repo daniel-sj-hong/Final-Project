@@ -45,9 +45,9 @@ export default class SearchResults extends React.Component {
                     {restaurant.name}
                   </div>
                   <div className="row">
-                  <div className="col-thirds"><ReactStars size={15} value={restaurant.rating} edit={false} isHalf={true} activeColor="#000" /></div>
-                    <div className="col-thirds">{restaurant.review_count} reviews</div>
-                    <div className="col-thirds">{restaurant.price}</div>
+                    <div className="col-one-thirds"><ReactStars value={restaurant.rating} edit={false} isHalf={true} /></div>
+                    <div className="col-one-thirds">{restaurant.review_count} reviews</div>
+                    <div className="col-one-thirds">{restaurant.price}</div>
                   </div>
                   <div className="row overflow">
                     {`${restaurant.location.display_address[0]} ${restaurant.location.display_address[1]}`}
