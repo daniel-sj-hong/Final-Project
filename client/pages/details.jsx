@@ -82,24 +82,33 @@ export default class Details extends React.Component {
           </div>
           <div className="row">
             <div className="col-full">
-              <h2 className="margin-left-15">Reviews</h2>
+              <h2 className="margin-lb">Reviews</h2>
             </div>
           </div>
           <div className="row">
             <ul className="row justify-center">
-              <li className="col-90">
-                <div className="row">
-                  <div className="col-one-thirds flex center-all">
-                    <p>{this.state.reviews[0].user.name}</p>
-                  </div>
-                  <div className="col-one-thirds flex center-all">
-                    <ReactStars size={15} value={this.state.reviews[0].rating} edit={false} isHalf={true} />
-                  </div>
-                  <div className="col-one-thirds flex center-all">
-                    <p>{dateFormated}</p>
-                  </div>
-                </div>
-              </li>
+              {
+                this.state.reviews.map(comments =>
+                  <li className="col-90" key={comments.id}>
+                    <div className="row">
+                      <div className="col-one-thirds flex center-all">
+                        <p>{comments.user.name}</p>
+                      </div>
+                      <div className="col-one-thirds flex center-all">
+                        <ReactStars size={15} value={comments.rating} edit={false} isHalf={true} />
+                      </div>
+                      <div className="col-one-thirds flex center-all">
+                        <p>{dateFormated}</p>
+                      </div>
+                    </div>
+                    <div className="row">
+                      <div className="col-full flex center-all padding-lr margin-bottom-4">
+                        {comments.text}
+                      </div>
+                    </div>
+                  </li>
+                )
+              }
             </ul>
           </div>
         </div>
