@@ -24,8 +24,6 @@ export default class Details extends React.Component {
           reviews: comments,
           searchResults: restaurants
         });
-        console.log('reviews:', comments);
-        console.log('searchResults:', restaurants);
       });
   }
 
@@ -34,8 +32,6 @@ export default class Details extends React.Component {
     const timestamp = this.state.reviews[0].time_created;
     const date = new Date(timestamp);
     const dateFormated = format(date, 'MM/dd/yyyy');
-    console.log(dateFormated);
-    console.log(this.state.reviews[0].time_created);
     return (
       <>
         <Header />
