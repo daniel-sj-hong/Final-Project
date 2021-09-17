@@ -55,7 +55,7 @@ export default class Details extends React.Component {
                   <ReactStars size={30} value={this.state.searchResults.rating} edit={false} isHalf={true} />
                 </div>
                 <div className="col-one-thirds flex center-all">
-                  <p className="font-adjust font-bold margin-r12">
+                  <p className="font-bold margin-r12 font-adjust-3">
                     {this.state.searchResults.review_count} Reviews
                   </p>
                 </div>

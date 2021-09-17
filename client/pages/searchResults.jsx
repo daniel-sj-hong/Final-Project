@@ -32,7 +32,7 @@ export default class SearchResults extends React.Component {
           <ul className="row justify-center">
         {
         this.state.searchResults.map(restaurant =>
-            <li className="col-90" key={restaurant.id}>
+            <li className="col-90 cool-effect" key={restaurant.id}>
               <a href={`#details?alias=${restaurant.alias}`}>
               <div className="row padding-tb10">
                 <div className="col-20 flex center-all">
