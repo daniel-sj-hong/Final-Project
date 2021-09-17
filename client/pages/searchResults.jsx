@@ -50,7 +50,7 @@ export default class SearchResults extends React.Component {
                     <div className="col-one-thirds">{restaurant.price}</div>
                   </div>
                   <div className="row overflow">
-                    {`${restaurant.location.display_address[0]} ${restaurant.location.display_address[1]}`}
+                    {`${restaurant.location.address1}, ${restaurant.location.city}, ${restaurant.location.state} ${restaurant.location.zip_code}`}
                   </div>
                 </div>
               </div>

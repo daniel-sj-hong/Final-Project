@@ -255,7 +255,7 @@ body {
   content: '»';
   position: absolute;
   opacity: 0;
-  top: 35px;
+  top: 33px;
   right: -20px;
   transition: 0.5s;
 }

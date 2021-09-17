@@ -63,7 +63,7 @@ export default class Details extends React.Component {
               <div className="row">
                 <div className="col-full flex center-all">
                   <p className="font-adjust font-bold">
-                    {`${this.state.searchResults.location.display_address[0]} ${this.state.searchResults.location.display_address[1]}`}
+                    {`${this.state.searchResults.location.address1}, ${this.state.searchResults.location.city}, ${this.state.searchResults.location.state} ${this.state.searchResults.location.zip_code}`}
                   </p>
                 </div>
               </div>
