@@ -224,7 +224,7 @@ body {
 }
 
 .font-adjust-3 {
-  font-size: 13px;
+  font-size: 12px;
 }
 
 .font-bold {
@@ -232,7 +232,7 @@ body {
 }
 
 .margin-r12 {
-  margin-right: 12px;
+  margin-right: 5px;
 }
 
 .margin-lb {
@@ -314,6 +314,10 @@ body {
 
   .font-adjust-2 {
     font-size: 12px;
+  }
+
+  .font-adjust-3 {
+    font-size: 13px;
   }
 
   .margin-r12 {
