@@ -31,7 +31,8 @@ export default class SearchResults extends React.Component {
           <ul className="row justify-center">
         {
         this.state.searchResults.map(restaurant =>
-            <li className="col-90" key={restaurant.id}>
+            <li className="col-90 cool-effect" key={restaurant.id}>
+              <a href={`#details?alias=${restaurant.alias}`}>
               <div className="row padding-tb10">
                 <div className="col-20 flex center-all">
                   <div className="flex center-all">
@@ -43,15 +44,16 @@ export default class SearchResults extends React.Component {
                     {restaurant.name}
                   </div>
                   <div className="row">
-                  <div className="col-thirds"><ReactStars size={13} value={restaurant.rating} edit={false} isHalf={true} activeColor="#000" /></div>
-                    <div className="col-thirds">{restaurant.review_count} reviews</div>
-                    <div className="col-thirds">{restaurant.price}</div>
+                    <div className="col-one-thirds"><ReactStars value={restaurant.rating} edit={false} isHalf={true} /></div>
+                    <div className="col-one-thirds">{restaurant.review_count} reviews</div>
+                    <div className="col-one-thirds">{restaurant.price}</div>
                   </div>
                   <div className="row overflow">
-                    {`${restaurant.location.display_address[0]} ${restaurant.location.display_address[1]}`}
+                    {`${restaurant.location.address1}, ${restaurant.location.city}, ${restaurant.location.state} ${restaurant.location.zip_code}`}
                   </div>
                 </div>
               </div>
+              </a>
             </li>
         )
       }

@@ -1,3 +1,8 @@
+a {
+  text-decoration: none;
+  color: black;
+}
+
 .header-color {
   background-color: #5f9aa4;
 }
@@ -137,6 +142,21 @@ li {
   border-radius: 20px;
   margin-top: 10px;
   font-weight: bold;
+  animation: slide-up 1s ease;
+}
+
+@keyframes slide-up {
+  0% {
+    transform: translateY(90px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+body {
+  overflow: hidden;
 }
 
 .overflow {
@@ -146,8 +166,12 @@ li {
   display: inline-block;
 }
 
-.col-thirds {
+.col-one-thirds {
   flex-basis: calc(100% / 3);
+}
+
+.col-two-thirds {
+  flex-basis: calc(200% / 3);
 }
 
 .col-20 {
@@ -173,14 +197,87 @@ li {
 }
 
 .image-size-adjust {
-  height: 45px;
   width: 50px;
+  height: 45px;
+}
+
+.margin-top-50 {
+  margin-top: 50px;
+}
+
+.details-image-size {
+  width: 90px;
+  height: 90px;
+  border-radius: 15px;
+}
+
+.margin-bottom-4 {
+  margin-bottom: 4px;
+}
+
+.font-adjust {
+  font-size: 12px;
+}
+
+.font-adjust-2 {
+  font-size: 11px;
+}
+
+.font-adjust-3 {
+  font-size: 12px;
+}
+
+.font-bold {
+  font-weight: bold;
+}
+
+.margin-r12 {
+  margin-right: 5px;
+}
+
+.margin-lb {
+  margin-left: 20px;
+  margin-bottom: -15px;
+}
+
+.padding-lr {
+  padding-left: 15px;
+  padding-right: 5px;
+}
+
+.cool-effect {
+  transition: all 0.5s;
+  display: inline-block;
+  position: relative;
+}
+
+.cool-effect::after {
+  content: '»';
+  position: absolute;
+  opacity: 0;
+  top: 33px;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.cool-effect:hover {
+  padding-right: 24px;
+  padding-left: 8px;
+}
+
+.cool-effect:hover::after {
+  opacity: 1;
+  right: 10px;
+}
+
+.cool-effect:active {
+  background-color: #2a7397;
 }
 
 @media screen and (min-width: 768px) {
   li {
     font-size: 16px;
-    margin-top: 15px;
+    margin-top: 14px;
   }
 
   .image-size-adjust {
@@ -198,10 +295,32 @@ li {
 
   .search-results-container {
     width: 500px;
+    height: 650px;
   }
 
   .search-result-text {
     margin-bottom: 8px;
     margin-right: 13em;
+  }
+
+  .details-image-size {
+    width: 8em;
+    height: 8em;
+  }
+
+  .font-adjust {
+    font-size: 15px;
+  }
+
+  .font-adjust-2 {
+    font-size: 12px;
+  }
+
+  .font-adjust-3 {
+    font-size: 13px;
+  }
+
+  .margin-r12 {
+    margin-right: 28px;
   }
 }
