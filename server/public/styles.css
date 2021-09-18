@@ -274,6 +274,62 @@ body {
   background-color: #2a7397;
 }
 
+.flex-start {
+  justify-content: flex-start;
+}
+
+.app-icon {
+  position: absolute;
+  left: 1em;
+  font-size: 25px;
+  color: white;
+  top: 0.5em;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.app-drawer {
+  width: 200px;
+  height: 100vh;
+  background-color: white;
+  z-index: 2;
+}
+
+.modal-background {
+  background-color: rgba(116, 106, 106, 0.5);
+  width: 100vw;
+  height: 100vh;
+  z-index: 2;
+}
+
+.margin-top-0 {
+  margin-top: 20px;
+}
+
+.margin-left-20 {
+  margin-left: 20px;
+}
+
+.padding-0 {
+  padding: 0;
+}
+
+.list-item {
+  padding: 10px;
+  transition: 0.5s;
+  border-radius: 0;
+}
+
+.padding-10 {
+  padding: 10px;
+}
+
+.list-item:hover {
+  background-color: aqua;
+}
+
 @media screen and (min-width: 768px) {
   li {
     font-size: 16px;
@@ -322,5 +378,9 @@ body {
 
   .margin-r12 {
     margin-right: 28px;
+  }
+
+  .app-drawer {
+    width: 300px;
   }
 }
