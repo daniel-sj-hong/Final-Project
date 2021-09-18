@@ -8,7 +8,7 @@ create schema "public";
 
 CREATE TABLE "public"."Favorites" (
 	"details" json NOT NULL,
-	"favoritesId" integer NOT NULL
+	"favoritesId" serial NOT NULL
 ) WITH (
   OIDS=FALSE
 );

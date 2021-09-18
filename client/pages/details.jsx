@@ -9,8 +9,25 @@ export default class Details extends React.Component {
     this.state = {
       isLoading: true,
       reviews: [],
-      searchResults: []
+      searchResults: [],
+      isFavorite: false,
+      favoritesId: null
     };
+    this.toggleOn = this.toggleOn.bind(this);
+  }
+
+  toggleOn() {
+    fetch('/api/favorites', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(this.state.searchResults)
+    })
+      .then(response => response.json())
+      .then(result => {
+        this.setState({ isFavorite: true, favoritesId: result.favoritesId });
+      });
   }
 
   componentDidMount() {
@@ -71,7 +88,7 @@ export default class Details extends React.Component {
                   {this.state.searchResults.display_phone}
                 </div>
                 <div className="col-one-thirds flex center-all">
-                  <i className="far fa-heart"></i>
+                  <i onClick={this.toggleOn} className={this.state.isFavorite ? 'fas fa-heart' : 'far fa-heart'}></i>
                 </div>
               </div>
             </div>

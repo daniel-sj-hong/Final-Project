@@ -63,14 +63,24 @@ app.get('/api/reviews', (req, res, next) => {
     .catch(err => next(err));
 });
 
-app.post('/api/favorites', (req, res, next) => {
-  const { details, favoritesId } = req.body;
+app.get('/api/favorites', (req, res, next) => {
   const sql = `
-  insert into "Favorites" ("details", "favoritesId")
-  values ('$1','$2')
+  select *
+  from "Favorites"
+  `;
+  db.query(sql)
+    .then(response => res.status(200).json(response.rows))
+    .catch(err => next(err));
+});
+
+app.post('/api/favorites', (req, res, next) => {
+  const { body: details } = req;
+  const sql = `
+  insert into "Favorites" ("details")
+  values ($1)
   returning *
   `;
-  const params = [details, favoritesId];
+  const params = [details];
   db.query(sql, params)
     .then(result => {
       const favorite = result.rows[0];

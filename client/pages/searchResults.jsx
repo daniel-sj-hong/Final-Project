@@ -15,7 +15,6 @@ export default class SearchResults extends React.Component {
       .then(response => response.json())
       .then(restaurants => {
         this.setState({ searchResults: restaurants });
-        console.log(restaurants);
       });
   }
 
