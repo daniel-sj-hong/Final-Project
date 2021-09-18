@@ -63,6 +63,22 @@ app.get('/api/reviews', (req, res, next) => {
     .catch(err => next(err));
 });
 
+app.post('/api/favorites', (req, res, next) => {
+  const { details, favoritesId } = req.body;
+  const sql = `
+  insert into "Favorites" ("details", "favoritesId")
+  values ('$1','$2')
+  returning *
+  `;
+  const params = [details, favoritesId];
+  db.query(sql, params)
+    .then(result => {
+      const favorite = result.rows[0];
+      res.status(201).json(favorite);
+    })
+    .catch(err => next(err));
+});
+
 app.use(errorMiddleware);
 
 app.listen(process.env.PORT, () => {
