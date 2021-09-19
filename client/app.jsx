@@ -3,6 +3,7 @@ import Home from './pages/home';
 import parseRoute from './lib/parseRoute';
 import SearchResults from './pages/searchResults';
 import Details from './pages/details';
+import Favorites from './pages/favorites';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -29,6 +30,9 @@ export default class App extends React.Component {
     }
     if (route.path === 'details') {
       return <Details params={this.state.route.params} />;
+    }
+    if (route.path === 'favorites') {
+      return <Favorites params={this.state.route.params} />;
     }
   }
 
