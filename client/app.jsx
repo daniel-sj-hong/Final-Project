@@ -26,7 +26,7 @@ export default class App extends React.Component {
       return <Home />;
     }
     if (route.path === 'search') {
-      return <SearchResults params={this.state.route.params} />;
+      return <SearchResults params={this.state.route.params} dog={'bark'} cat={'meow'} />;
     }
     if (route.path === 'details') {
       return <Details params={this.state.route.params} />;

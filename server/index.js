@@ -26,8 +26,8 @@ app.get('/api/categories', (req, res) => {
   `;
   db.query(sql)
     .then(result => {
-      const grade = result.rows;
-      res.json(grade);
+      const list = result.rows;
+      res.json(list);
     })
     .catch(err => {
       console.error(err);
@@ -46,6 +46,7 @@ app.get('/api/business', (req, res, next) => {
 
 app.get('/api/restaurants', (req, res, next) => {
   const { category, location } = req.query;
+  console.log('req.query:', req.query);
   client.search({
     term: category,
     location: location

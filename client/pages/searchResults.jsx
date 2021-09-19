@@ -5,13 +5,19 @@ import ReactStars from 'react-rating-stars-component';
 export default class SearchResults extends React.Component {
   constructor(props) {
     super(props);
+    console.log('props:', props.params.toString());
     this.state = {
       searchResults: []
     };
   }
 
   componentDidMount() {
-    fetch(`/api/restaurants?${this.props.params.toString()}`)
+    fetch(`/api/restaurants?${this.props.params.toString()}`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
       .then(response => response.json())
       .then(restaurants => {
         this.setState({ searchResults: restaurants });
