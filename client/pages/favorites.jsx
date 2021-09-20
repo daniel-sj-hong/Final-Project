@@ -36,6 +36,12 @@ export default class Favorites extends React.Component {
   }
 
   render() {
+    let hideBG = '';
+    let hideModal = '';
+    if (!this.state.isModalOn) {
+      hideBG = 'hidden';
+      hideModal = 'hidden';
+    }
     return (
       <>
         <Header />
@@ -43,7 +49,8 @@ export default class Favorites extends React.Component {
           <h2 className="favorites-text">Favorites</h2>
         </div>
 
-        <div className="modal-container absolute">
+        <div className={`modal-background absolute ${hideBG}`}></div>
+        <div className={`modal-container absolute ${hideModal}`}>
 
           <div className="row col-90 white-background center-all border-radius margin-top-10">
             <div className="row padding-tb10">
@@ -69,7 +76,7 @@ export default class Favorites extends React.Component {
           </div>
 
           <div className="row justify-end col-90 margin-bottom-6">
-            <button className="close-button">Close</button>
+            <button onClick={this.toggleOff} className="close-button">Close</button>
           </div>
 
         </div>

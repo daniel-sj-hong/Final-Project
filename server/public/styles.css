@@ -392,6 +392,10 @@ body {
   z-index: 2;
 }
 
+.hide-modal {
+  display: hidden;
+}
+
 @media screen and (min-width: 768px) {
   li {
     font-size: 16px;
