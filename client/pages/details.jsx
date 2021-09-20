@@ -52,7 +52,7 @@ export default class Details extends React.Component {
     return (
       <>
         <Header />
-        <div className="container search-results-container restrict-height margin-top-50">
+        <div className="container search-results-container restrict-height margin-top-20">
           <div className="row">
             <div className="col-full flex justify-center">
               <h1>{this.state.searchResults.name}</h1>
@@ -68,7 +68,7 @@ export default class Details extends React.Component {
                   <ReactStars size={30} value={this.state.searchResults.rating} edit={false} isHalf={true} />
                 </div>
                 <div className="col-one-thirds flex center-all">
-                  <p className="font-bold margin-r12 font-adjust-3">
+                  <p className="review-count font-adjust-3">
                     {this.state.searchResults.review_count} Reviews
                   </p>
                 </div>

@@ -78,6 +78,12 @@ input {
   color: inherit;
 }
 
+.review-count {
+  font-weight: bold;
+  margin-right: 5px;
+  font-size: 12px;
+}
+
 .border-category:hover {
   cursor: pointer;
 }
@@ -231,10 +237,6 @@ body {
   font-weight: bold;
 }
 
-.margin-r12 {
-  margin-right: 5px;
-}
-
 .margin-lb {
   margin-left: 20px;
   margin-bottom: -15px;
@@ -272,10 +274,6 @@ body {
 
 .cool-effect:active {
   background-color: #2a7397;
-}
-
-.flex-start {
-  justify-content: flex-start;
 }
 
 .app-icon {
@@ -330,10 +328,71 @@ body {
   background-color: aqua;
 }
 
+.favorites-text {
+  margin-bottom: 8px;
+  margin-right: 9em;
+}
+
+.randomize-button {
+  background-color: #ec9393;
+  padding: 5px 20px;
+  border: none;
+  border-radius: 15px;
+  font-size: 20px;
+  margin-top: 15px;
+  color: white;
+}
+
+.close-button {
+  background-color: #fff;
+  padding: 5px 20px;
+  border: none;
+  border-radius: 15px;
+  font-size: 20px;
+  margin-top: 15px;
+}
+
+.modal-container {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e7e0e0;
+  flex-direction: column;
+  border-radius: 1rem;
+  position: absolute;
+  left: 2.3em;
+  top: 20em;
+  z-index: 2;
+}
+
+.bubble-inside-modal {
+  width: 90%;
+  background-color: #fff;
+  border-radius: 1rem;
+  margin-top: 10px;
+}
+
+.close-button-row {
+  justify-content: flex-end;
+  width: 90%;
+  margin-bottom: 6px;
+}
+
+.location-input:focus {
+  outline: none !important;
+}
+
 @media screen and (min-width: 768px) {
   li {
     font-size: 16px;
     margin-top: 14px;
+  }
+
+  .modal-container {
+    width: 24%;
+    left: 45.5em;
+    top: 23em;
   }
 
   .image-size-adjust {
@@ -352,6 +411,11 @@ body {
   .search-results-container {
     width: 500px;
     height: 650px;
+  }
+
+  .favorites-text {
+    margin-bottom: 8px;
+    margin-right: 14em;
   }
 
   .search-result-text {

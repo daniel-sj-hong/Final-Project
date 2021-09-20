@@ -11,7 +11,8 @@ export default class SearchResults extends React.Component {
   }
 
   componentDidMount() {
-    fetch(`/api/restaurants?${this.props.params.toString()}`)
+    fetch(`/api/restaurants?${this.props.params.toString()}`, {
+    })
       .then(response => response.json())
       .then(restaurants => {
         this.setState({ searchResults: restaurants });

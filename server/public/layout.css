@@ -16,3 +16,7 @@
 .col-half {
   flex-basis: 50%;
 }
+
+.hidden {
+  display: none !important;
+}

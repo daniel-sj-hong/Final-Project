@@ -26,8 +26,8 @@ app.get('/api/categories', (req, res) => {
   `;
   db.query(sql)
     .then(result => {
-      const grade = result.rows;
-      res.json(grade);
+      const list = result.rows;
+      res.json(list);
     })
     .catch(err => {
       console.error(err);
