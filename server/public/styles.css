@@ -366,10 +366,6 @@ body {
   z-index: 2;
 }
 
-.hidden {
-  display: none;
-}
-
 .bubble-inside-modal {
   width: 90%;
   background-color: #fff;

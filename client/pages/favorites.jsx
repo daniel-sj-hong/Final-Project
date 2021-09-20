@@ -16,10 +16,6 @@ export default class Favorites extends React.Component {
 
   componentDidMount() {
     fetch('/api/favorites', {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json'
-      }
     })
       .then(response => response.json())
       .then(result => {

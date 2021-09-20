@@ -12,10 +12,6 @@ export default class SearchResults extends React.Component {
 
   componentDidMount() {
     fetch(`/api/restaurants?${this.props.params.toString()}`, {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json'
-      }
     })
       .then(response => response.json())
       .then(restaurants => {
