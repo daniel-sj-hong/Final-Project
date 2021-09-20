@@ -5,7 +5,6 @@ import ReactStars from 'react-rating-stars-component';
 export default class SearchResults extends React.Component {
   constructor(props) {
     super(props);
-    console.log('props:', props.params.toString());
     this.state = {
       searchResults: []
     };

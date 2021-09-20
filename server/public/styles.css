@@ -78,6 +78,12 @@ input {
   color: inherit;
 }
 
+.review-count {
+  font-weight: bold;
+  margin-right: 5px;
+  font-size: 12px;
+}
+
 .border-category:hover {
   cursor: pointer;
 }
@@ -215,10 +221,6 @@ body {
   margin-bottom: 4px;
 }
 
-.margin-bottom-6 {
-  margin-bottom: 6px;
-}
-
 .font-adjust {
   font-size: 12px;
 }
@@ -233,10 +235,6 @@ body {
 
 .font-bold {
   font-weight: bold;
-}
-
-.margin-r12 {
-  margin-right: 5px;
 }
 
 .margin-lb {
@@ -278,14 +276,6 @@ body {
   background-color: #2a7397;
 }
 
-.flex-start {
-  justify-content: flex-start;
-}
-
-.justify-end {
-  justify-content: flex-end;
-}
-
 .app-icon {
   position: absolute;
   left: 1em;
@@ -314,10 +304,6 @@ body {
 
 .margin-top-0 {
   margin-top: 20px;
-}
-
-.margin-top-10 {
-  margin-top: 10px;
 }
 
 .margin-left-20 {
@@ -366,10 +352,6 @@ body {
   margin-top: 15px;
 }
 
-.white-background {
-  background-color: #fff;
-}
-
 .modal-container {
   width: 80%;
   display: flex;
@@ -386,6 +368,23 @@ body {
 
 .hidden {
   display: none;
+}
+
+.bubble-inside-modal {
+  width: 90%;
+  background-color: #fff;
+  border-radius: 1rem;
+  margin-top: 10px;
+}
+
+.close-button-row {
+  justify-content: flex-end;
+  width: 90%;
+  margin-bottom: 6px;
+}
+
+.location-input:focus {
+  outline: none !important;
 }
 
 @media screen and (min-width: 768px) {

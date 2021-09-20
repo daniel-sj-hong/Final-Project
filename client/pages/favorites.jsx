@@ -62,12 +62,10 @@ export default class Favorites extends React.Component {
           <div className={`modal-background absolute ${hideBG}`}></div>
           <div className={`modal-container absolute ${hideModal}`}>
 
-            <div className="row col-90 white-background center-all border-radius margin-top-10">
+            <div className="row bubble-inside-modal">
               <div className="row padding-tb10">
                 <div className="col-20 flex center-all">
-                  <div className="flex center-all">
-                    <img className="image-size-adjust border-radius" src={random.details.image_url} alt="placeholder" />
-                  </div>
+                  <img className="image-size-adjust border-radius" src={random.details.image_url} alt={random.details.name} />
                 </div>
                 <div className="col-80 center-all">
                   <div className="row">
@@ -85,7 +83,7 @@ export default class Favorites extends React.Component {
               </div>
             </div>
 
-            <div className="row justify-end col-90 margin-bottom-6">
+            <div className="row close-button-row">
               <button onClick={this.toggleOff} className="close-button">Close</button>
             </div>
 
