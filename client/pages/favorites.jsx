@@ -6,8 +6,11 @@ export default class Favorites extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      favorites: []
+      favorites: [],
+      isModalOn: false
     };
+    this.toggleOn = this.toggleOn.bind(this);
+    this.toggleOff = this.toggleOff.bind(this);
   }
 
   componentDidMount() {
@@ -24,6 +27,14 @@ export default class Favorites extends React.Component {
       });
   }
 
+  toggleOn() {
+    this.setState({ isModalOn: true });
+  }
+
+  toggleOff() {
+    this.setState({ isModalOn: false });
+  }
+
   render() {
     return (
       <>
@@ -32,11 +43,43 @@ export default class Favorites extends React.Component {
           <h2 className="favorites-text">Favorites</h2>
         </div>
 
+        <div className="modal-container absolute">
+
+          <div className="row col-90 white-background center-all border-radius margin-top-10">
+            <div className="row padding-tb10">
+              <div className="col-20 flex center-all">
+                <div className="flex center-all">
+                  <img className="image-size-adjust border-radius" src="" alt="placeholder" />
+                </div>
+              </div>
+              <div className="col-80 center-all">
+                <div className="row">
+                  Restaurant Name
+                </div>
+                <div className="row">
+                  <div className="col-one-thirds"><ReactStars value={5} edit={false} isHalf={true} /></div>
+                  <div className="col-one-thirds">5 reviews</div>
+                  <div className="col-one-thirds">$$</div>
+                </div>
+                <div className="row overflow">
+                  123 learingfuze, irvine ca 11111
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="row justify-end col-90 margin-bottom-6">
+            <button className="close-button">Close</button>
+          </div>
+
+        </div>
+
         <div className="container search-results-container restrict-height">
           <ul className="row justify-center">
             {
               this.state.favorites.map(restaurant =>
-                <li className="col-90 cool-effect" key={restaurant.details.id}>
+                <li className="col-90" key={restaurant.details.id}>
+                  <a href={`#details?alias=${restaurant.details.alias}`}>
                   <div className="row padding-tb10">
                     <div className="col-20 flex center-all">
                       <div className="flex center-all">
@@ -57,10 +100,14 @@ export default class Favorites extends React.Component {
                       </div>
                     </div>
                   </div>
+                  </a>
                 </li>
               )
             }
           </ul>
+        </div>
+        <div className="row justify-center">
+          <button onClick={this.toggleOn} className="randomize-button">Randomize</button>
         </div>
       </>
     );

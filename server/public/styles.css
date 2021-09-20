@@ -215,6 +215,10 @@ body {
   margin-bottom: 4px;
 }
 
+.margin-bottom-6 {
+  margin-bottom: 6px;
+}
+
 .font-adjust {
   font-size: 12px;
 }
@@ -278,6 +282,14 @@ body {
   justify-content: flex-start;
 }
 
+.justify-end {
+  justify-content: flex-end;
+}
+
+/* .modal-color {
+  background-color: #e7e0e0;
+} */
+
 .app-icon {
   position: absolute;
   left: 1em;
@@ -308,6 +320,10 @@ body {
   margin-top: 20px;
 }
 
+.margin-top-10 {
+  margin-top: 10px;
+}
+
 .margin-left-20 {
   margin-left: 20px;
 }
@@ -330,14 +346,62 @@ body {
   background-color: aqua;
 }
 
-/* .favorites-text {
+.favorites-text {
+  margin-bottom: 8px;
+  margin-right: 14em;
+}
 
+.randomize-button {
+  background-color: #ec9393;
+  padding: 5px 20px;
+  border: none;
+  border-radius: 15px;
+  font-size: 20px;
+  margin-top: 15px;
+  color: white;
+}
+
+.close-button {
+  background-color: #fff;
+  padding: 5px 20px;
+  border: none;
+  border-radius: 15px;
+  font-size: 20px;
+  margin-top: 15px;
+}
+
+.white-background {
+  background-color: #fff;
+}
+
+/* .width-100 {
+  width: 100%;
 } */
+
+.modal-container {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e7e0e0;
+  flex-direction: column;
+  border-radius: 1rem;
+  position: absolute;
+  left: 2.3em;
+  top: 20em;
+  z-index: 2;
+}
 
 @media screen and (min-width: 768px) {
   li {
     font-size: 16px;
     margin-top: 14px;
+  }
+
+  .modal-container {
+    width: 30%;
+    left: 31.5em;
+    top: 23em;
   }
 
   .image-size-adjust {
