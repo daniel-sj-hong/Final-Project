@@ -286,10 +286,6 @@ body {
   justify-content: flex-end;
 }
 
-/* .modal-color {
-  background-color: #e7e0e0;
-} */
-
 .app-icon {
   position: absolute;
   left: 1em;
@@ -373,10 +369,6 @@ body {
 .white-background {
   background-color: #fff;
 }
-
-/* .width-100 {
-  width: 100%;
-} */
 
 .modal-container {
   width: 80%;
