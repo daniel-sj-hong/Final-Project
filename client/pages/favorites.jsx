@@ -7,7 +7,8 @@ export default class Favorites extends React.Component {
     super(props);
     this.state = {
       favorites: [],
-      isModalOn: false
+      isModalOn: false,
+      isLoading: true
     };
     this.toggleOn = this.toggleOn.bind(this);
     this.toggleOff = this.toggleOff.bind(this);
@@ -23,7 +24,7 @@ export default class Favorites extends React.Component {
       .then(response => response.json())
       .then(result => {
         console.log(result);
-        this.setState({ favorites: result });
+        this.setState({ favorites: result, isLoading: false });
       });
   }
 
@@ -36,49 +37,53 @@ export default class Favorites extends React.Component {
   }
 
   render() {
+    if (this.state.isLoading) return null;
+
     let hideBG = '';
     let hideModal = '';
     if (!this.state.isModalOn) {
       hideBG = 'hidden';
       hideModal = 'hidden';
     }
+
+    const random = this.state.favorites[Math.floor(Math.random() * this.state.favorites.length)];
+    console.log('random:', random);
     return (
       <>
         <Header />
         <div className="row justify-center">
           <h2 className="favorites-text">Favorites</h2>
-        </div>
+          <div className={`modal-background absolute ${hideBG}`}></div>
+          <div className={`modal-container absolute ${hideModal}`}>
 
-        <div className={`modal-background absolute ${hideBG}`}></div>
-        <div className={`modal-container absolute ${hideModal}`}>
-
-          <div className="row col-90 white-background center-all border-radius margin-top-10">
-            <div className="row padding-tb10">
-              <div className="col-20 flex center-all">
-                <div className="flex center-all">
-                  <img className="image-size-adjust border-radius" src="" alt="placeholder" />
+            <div className="row col-90 white-background center-all border-radius margin-top-10">
+              <div className="row padding-tb10">
+                <div className="col-20 flex center-all">
+                  <div className="flex center-all">
+                    <img className="image-size-adjust border-radius" src={random.details.image_url} alt="placeholder" />
+                  </div>
                 </div>
-              </div>
-              <div className="col-80 center-all">
-                <div className="row">
-                  Restaurant Name
-                </div>
-                <div className="row">
-                  <div className="col-one-thirds"><ReactStars value={5} edit={false} isHalf={true} /></div>
-                  <div className="col-one-thirds">5 reviews</div>
-                  <div className="col-one-thirds">$$</div>
-                </div>
-                <div className="row overflow">
-                  123 learingfuze, irvine ca 11111
+                <div className="col-80 center-all">
+                  <div className="row">
+                    {random.details.name}
+                  </div>
+                  <div className="row">
+                    <div className="col-one-thirds"><ReactStars value={random.details.rating} edit={false} isHalf={true} /></div>
+                    <div className="col-one-thirds">{random.details.review_count}</div>
+                    <div className="col-one-thirds">{random.details.price}</div>
+                  </div>
+                  <div className="row overflow">
+                    {`${random.details.location.address1}, ${random.details.location.city}, ${random.details.location.state} ${random.details.location.zip_code}`}
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <div className="row justify-end col-90 margin-bottom-6">
-            <button onClick={this.toggleOff} className="close-button">Close</button>
-          </div>
+            <div className="row justify-end col-90 margin-bottom-6">
+              <button onClick={this.toggleOff} className="close-button">Close</button>
+            </div>
 
+        </div>
         </div>
 
         <div className="container search-results-container restrict-height">
