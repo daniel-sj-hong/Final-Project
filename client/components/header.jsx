@@ -20,7 +20,7 @@ export default class Header extends React.Component {
     return (
       <>
         <header className="header-color flex justify-center">
-          <p className="header">Choice.ly</p>
+          <a href="#"><p className="header">Choice.ly</p></a>
           <i onClick={this.toggle} className="fas fa-bars app-icon"></i>
         </header>
           {this.state.isModalOn &&
