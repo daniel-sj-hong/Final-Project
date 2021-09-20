@@ -46,6 +46,15 @@ export default class Favorites extends React.Component {
       hideModal = 'hidden';
     }
 
+    if (this.state.favorites.length === 0) {
+      return (
+        <>
+          <Header />
+          <h3 className="align-center margin-top-50">No restaurants have been favorited</h3>
+        </>
+      );
+    }
+
     const random = this.state.favorites[Math.floor(Math.random() * this.state.favorites.length)];
     console.log('random:', random);
     return (

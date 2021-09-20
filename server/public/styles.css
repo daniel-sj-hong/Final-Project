@@ -348,7 +348,7 @@ body {
 
 .favorites-text {
   margin-bottom: 8px;
-  margin-right: 14em;
+  margin-right: 9em;
 }
 
 .randomize-button {
@@ -424,6 +424,11 @@ body {
   .search-results-container {
     width: 500px;
     height: 650px;
+  }
+
+  .favorites-text {
+    margin-bottom: 8px;
+    margin-right: 14em;
   }
 
   .search-result-text {
