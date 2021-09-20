@@ -23,7 +23,6 @@ export default class Favorites extends React.Component {
     })
       .then(response => response.json())
       .then(result => {
-        console.log(result);
         this.setState({ favorites: result, isLoading: false });
       });
   }
@@ -38,14 +37,6 @@ export default class Favorites extends React.Component {
 
   render() {
     if (this.state.isLoading) return null;
-
-    let hideBG = '';
-    let hideModal = '';
-    if (!this.state.isModalOn) {
-      hideBG = 'hidden';
-      hideModal = 'hidden';
-    }
-
     if (this.state.favorites.length === 0) {
       return (
         <>
@@ -55,8 +46,14 @@ export default class Favorites extends React.Component {
       );
     }
 
+    let hideBG = '';
+    let hideModal = '';
+    if (!this.state.isModalOn) {
+      hideBG = 'hidden';
+      hideModal = 'hidden';
+    }
+
     const random = this.state.favorites[Math.floor(Math.random() * this.state.favorites.length)];
-    console.log('random:', random);
     return (
       <>
         <Header />

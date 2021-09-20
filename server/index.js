@@ -46,7 +46,6 @@ app.get('/api/business', (req, res, next) => {
 
 app.get('/api/restaurants', (req, res, next) => {
   const { category, location } = req.query;
-  console.log('req.query:', req.query);
   client.search({
     term: category,
     location: location
