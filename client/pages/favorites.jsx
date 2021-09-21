@@ -58,6 +58,7 @@ export default class Favorites extends React.Component {
           <div className={`modal-background absolute ${hideBG}`}></div>
           <div className={`modal-container absolute ${hideModal}`}>
 
+            <h1>Eat here!</h1>
             <div className="row bubble-inside-modal">
               <div className="row padding-tb10">
                 <div className="col-20 flex center-all">
@@ -83,7 +84,7 @@ export default class Favorites extends React.Component {
               <button onClick={this.toggleOff} className="close-button">Close</button>
             </div>
 
-        </div>
+          </div>
         </div>
 
         <div className="container search-results-container restrict-height">
