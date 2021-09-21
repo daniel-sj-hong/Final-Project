@@ -4,6 +4,7 @@ const errorMiddleware = require('./error-middleware');
 const staticMiddleware = require('./static-middleware');
 const pg = require('pg');
 const yelp = require('yelp-fusion');
+const ClientError = require('./client-error');
 const client = yelp.client(process.env.YELP_API_KEY);
 const app = express();
 
@@ -73,14 +74,48 @@ app.get('/api/favorites', (req, res, next) => {
     .catch(err => next(err));
 });
 
-app.post('/api/favorites', (req, res, next) => {
-  const { body: details } = req;
+app.delete('/api/favorites', (req, res, next) => {
+  const { alias } = req.body;
   const sql = `
-  insert into "Favorites" ("details")
-  values ($1)
+  delete from "Favorites"
+  where "alias" = $1
   returning *
   `;
-  const params = [details];
+  const params = [alias];
+  db.query(sql, params)
+    .then(result => {
+      console.log(result.rows);
+      if (!result) {
+        throw new ClientError(404, `Cannot find favorites with alias of ${alias}`);
+      }
+      res.status(204).json(result.rows[0]);
+    })
+    .catch(err => next(err));
+});
+
+app.get('/api/getFavs', (req, res, next) => {
+  const sql = `
+  select * from "Favorites"
+  where "alias" = $1
+  `;
+  const params = [req.query.alias];
+  db.query(sql, params)
+    .then(result => {
+      const saved = result.rows;
+      console.log(result.rows);
+      res.status(200).json(saved);
+    })
+    .catch(err => next(err));
+});
+
+app.post('/api/favorites', (req, res, next) => {
+  const { details, alias } = req.body;
+  const sql = `
+  insert into "Favorites" ("details", "alias")
+  values ($1, $2)
+  returning *
+  `;
+  const params = [details, alias];
   db.query(sql, params)
     .then(result => {
       const favorite = result.rows[0];
