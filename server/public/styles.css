@@ -362,8 +362,24 @@ body {
   border-radius: 1rem;
   position: absolute;
   left: 2.3em;
-  top: 20em;
+  top: -300px;
+  animation: drop 0.5s ease forwards;
   z-index: 2;
+}
+
+@keyframes drop {
+  0% {
+    opacity: 0;
+  }
+
+  70% {
+    transform: translateY(700px);
+  }
+
+  100% {
+    transform: translateY(650px);
+    opacity: 1;
+  }
 }
 
 .bubble-inside-modal {
@@ -392,7 +408,6 @@ body {
   .modal-container {
     width: 24%;
     left: 45.5em;
-    top: 23em;
   }
 
   .image-size-adjust {
