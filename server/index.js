@@ -84,7 +84,6 @@ app.delete('/api/favorites', (req, res, next) => {
   const params = [alias];
   db.query(sql, params)
     .then(result => {
-      console.log(result.rows);
       if (!result) {
         throw new ClientError(404, `Cannot find favorites with alias of ${alias}`);
       }
@@ -102,7 +101,6 @@ app.get('/api/getFavs', (req, res, next) => {
   db.query(sql, params)
     .then(result => {
       const saved = result.rows;
-      console.log(result.rows);
       res.status(200).json(saved);
     })
     .catch(err => next(err));

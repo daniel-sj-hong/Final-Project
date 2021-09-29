@@ -39,7 +39,6 @@ export default class Details extends React.Component {
         },
         body: JSON.stringify({ alias: this.state.searchResults.alias })
       })
-        .then(response => response.json())
         .then(result => {
           this.setState({ isFavorite: false });
         });
