@@ -84,10 +84,6 @@ input {
   font-size: 12px;
 }
 
-.border-category:hover {
-  cursor: pointer;
-}
-
 .border-category:active {
   transform: translateY(0.25rem);
 }
@@ -135,14 +131,6 @@ input {
   font-size: 20px;
   margin-top: 15px;
   color: white;
-}
-
-.submit-button:hover {
-  cursor: pointer;
-}
-
-.heart-icon:hover {
-  cursor: pointer;
 }
 
 ul {
@@ -351,10 +339,6 @@ body {
   color: white;
 }
 
-.randomize-button:hover {
-  cursor: pointer;
-}
-
 .close-button {
   background-color: #fff;
   padding: 5px 20px;
@@ -364,7 +348,11 @@ body {
   margin-top: 15px;
 }
 
-.close-button:hover {
+.close-button:hover,
+.randomize-button:hover,
+.border-category:hover,
+.heart-icon:hover,
+.submit-button:hover {
   cursor: pointer;
 }
 
