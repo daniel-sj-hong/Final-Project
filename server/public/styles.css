@@ -137,6 +137,14 @@ input {
   color: white;
 }
 
+.submit-button:hover {
+  cursor: pointer;
+}
+
+.heart-icon:hover {
+  cursor: pointer;
+}
+
 ul {
   padding-left: 0;
 }
@@ -343,6 +351,10 @@ body {
   color: white;
 }
 
+.randomize-button:hover {
+  cursor: pointer;
+}
+
 .close-button {
   background-color: #fff;
   padding: 5px 20px;
@@ -350,6 +362,10 @@ body {
   border-radius: 15px;
   font-size: 20px;
   margin-top: 15px;
+}
+
+.close-button:hover {
+  cursor: pointer;
 }
 
 .modal-container {
