@@ -112,7 +112,7 @@ export default class Details extends React.Component {
                   {this.state.searchResults.display_phone}
                 </div>
                 <div className="col-one-thirds flex center-all">
-                  <i onClick={this.toggleOn} className={this.state.isFavorite ? 'fas fa-heart' : 'far fa-heart'}></i>
+                  <i onClick={this.toggleOn} className={this.state.isFavorite ? 'fas fa-heart heart-icon' : 'far fa-heart heart-icon'}></i>
                 </div>
               </div>
             </div>
