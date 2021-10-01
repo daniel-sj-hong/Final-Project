@@ -10,24 +10,39 @@ export default class Details extends React.Component {
       isLoading: true,
       reviews: [],
       searchResults: [],
-      isFavorite: false,
-      favoritesId: null
+      isFavorite: false
     };
     this.toggleOn = this.toggleOn.bind(this);
   }
 
   toggleOn() {
-    fetch('/api/favorites', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(this.state.searchResults)
-    })
-      .then(response => response.json())
-      .then(result => {
-        this.setState({ isFavorite: true, favoritesId: result.favoritesId });
-      });
+    if (this.state.isFavorite === false) {
+      fetch('/api/favorites', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          details: this.state.searchResults,
+          alias: this.state.searchResults.alias
+        })
+      })
+        .then(response => response.json())
+        .then(result => {
+          this.setState({ isFavorite: true });
+        });
+    } else {
+      fetch('/api/favorites', {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ alias: this.state.searchResults.alias })
+      })
+        .then(result => {
+          this.setState({ isFavorite: false });
+        });
+    }
   }
 
   componentDidMount() {
@@ -41,7 +56,16 @@ export default class Details extends React.Component {
           reviews: comments,
           searchResults: restaurants
         });
-      });
+      })
+      .then(
+        fetch(`/api/getFavs?${this.props.params.toString()}`)
+          .then(response => response.json())
+          .then(result => {
+            if (result.length > 0) {
+              this.setState({ isFavorite: true });
+            }
+          })
+      );
   }
 
   render() {
@@ -88,7 +112,7 @@ export default class Details extends React.Component {
                   {this.state.searchResults.display_phone}
                 </div>
                 <div className="col-one-thirds flex center-all">
-                  <i onClick={this.toggleOn} className={this.state.isFavorite ? 'fas fa-heart' : 'far fa-heart'}></i>
+                  <i onClick={this.toggleOn} className={this.state.isFavorite ? 'fas fa-heart heart-icon' : 'far fa-heart heart-icon'}></i>
                 </div>
               </div>
             </div>
