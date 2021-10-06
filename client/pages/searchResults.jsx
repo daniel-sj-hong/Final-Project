@@ -29,7 +29,7 @@ export default class SearchResults extends React.Component {
         </div>
 
         <div className="container search-results-container restrict-height">
-          <div className={this.state.searchResults.length === 0 ? 'row' : 'hidden'}>
+          <div className={this.state.searchResults.length === 0 ? 'row custom-h100' : 'hidden'}>
             <div className="lds-ripple"><div></div><div></div></div>
           </div>
           <ul className="row justify-center">
