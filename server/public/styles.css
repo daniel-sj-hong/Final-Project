@@ -159,6 +159,7 @@ li {
 
 body {
   overflow: hidden;
+  position: relative;
 }
 
 .overflow {
@@ -357,7 +358,7 @@ body {
 }
 
 .modal-container {
-  width: 80%;
+  width: 21em;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -365,9 +366,24 @@ body {
   flex-direction: column;
   border-radius: 1rem;
   position: absolute;
-  left: 2.3em;
-  top: 20em;
+  top: -300px;
+  animation: drop 0.5s ease forwards;
   z-index: 2;
+}
+
+@keyframes drop {
+  0% {
+    opacity: 0;
+  }
+
+  70% {
+    transform: translateY(700px);
+  }
+
+  100% {
+    transform: translateY(650px);
+    opacity: 1;
+  }
 }
 
 .bubble-inside-modal {
@@ -392,9 +408,6 @@ body {
   position: relative;
   width: 80px;
   height: 80px;
-  left: 50%;
-  transform: translateX(-50%);
-  top: 45%;
 }
 
 .lds-ripple div {
@@ -427,6 +440,10 @@ body {
   }
 }
 
+.custom-h100 {
+  height: 100%;
+}
+
 @media screen and (min-width: 768px) {
   li {
     font-size: 16px;
@@ -434,9 +451,7 @@ body {
   }
 
   .modal-container {
-    width: 24%;
-    left: 45.5em;
-    top: 23em;
+    width: 30em;
   }
 
   .image-size-adjust {
@@ -477,11 +492,11 @@ body {
   }
 
   .font-adjust-2 {
-    font-size: 12px;
+    font-size: 15px;
   }
 
   .font-adjust-3 {
-    font-size: 13px;
+    font-size: 15px;
   }
 
   .margin-r12 {

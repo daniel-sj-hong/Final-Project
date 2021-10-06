@@ -34,12 +34,9 @@ export default class Home extends React.Component {
 
   componentDidMount() {
     fetch('/api/categories')
-      .then(response => {
-        return response.json();
-      })
+      .then(response => response.json())
       .then(result => {
-        this.setState({ categories: result }, () => {
-        });
+        this.setState({ categories: result });
       })
       .catch(err => {
         console.error(err);
