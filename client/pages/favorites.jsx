@@ -97,7 +97,7 @@ export default class Favorites extends React.Component {
           <ul className="row justify-center">
             {
               this.state.favorites.map(restaurant =>
-                <li className="col-90" key={restaurant.details.id}>
+                <li className="col-90 cool-effect" key={restaurant.details.id}>
                   <a href={`#details?alias=${restaurant.details.alias}`}>
                   <div className="row padding-tb10">
                     <div className="col-20 flex center-all">
