@@ -90,7 +90,7 @@ export default class Details extends React.Component {
                 </div>
                 <div className="col-one-thirds flex center-all">
                   <p className="review-count font-adjust-3">
-                    {this.state.searchResults.review_count} Reviews
+                    {this.state.searchResults.review_count} reviews
                   </p>
                 </div>
               </div>

@@ -74,8 +74,8 @@ export default class Favorites extends React.Component {
                   </div>
                   <div className="row">
 
-                    <div className="col-one-thirds"><ReactStars value={this.state.rating} edit={false} isHalf={true} /></div>
-                    <div className="col-one-thirds">{this.state.random.details.review_count}</div>
+                    <div className="col-one-thirds"><ReactStars key={this.state.random.favoritesId} value={this.state.rating} edit={false} isHalf={true} /></div>
+                    <div className="col-one-thirds">{this.state.random.details.review_count} reviews</div>
                     <div className="col-one-thirds">{this.state.random.details.price}</div>
                   </div>
                   <div className="row overflow">
