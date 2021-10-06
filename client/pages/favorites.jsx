@@ -8,7 +8,9 @@ export default class Favorites extends React.Component {
     this.state = {
       favorites: [],
       isModalOn: false,
-      isLoading: true
+      isLoading: true,
+      random: null,
+      rating: 0
     };
     this.toggleOn = this.toggleOn.bind(this);
     this.toggleOff = this.toggleOff.bind(this);
@@ -24,7 +26,8 @@ export default class Favorites extends React.Component {
   }
 
   toggleOn() {
-    this.setState({ isModalOn: true });
+    const random = Math.floor(Math.random() * this.state.favorites.length);
+    this.setState({ isModalOn: true, random: this.state.favorites[random], rating: this.state.favorites[random].details.rating });
   }
 
   toggleOff() {
@@ -49,13 +52,13 @@ export default class Favorites extends React.Component {
       hideModal = 'hidden';
     }
 
-    const random = this.state.favorites[Math.floor(Math.random() * this.state.favorites.length)];
-    console.log(random);
     return (
       <>
         <Header />
         <div className="row justify-center">
           <h2 className="favorites-text">Favorites</h2>
+        {this.state.random &&
+        <>
           <div className={`modal-background absolute ${hideBG}`}></div>
           <div className={`modal-container absolute ${hideModal}`}>
 
@@ -63,31 +66,32 @@ export default class Favorites extends React.Component {
             <div className="row bubble-inside-modal">
               <div className="row padding-tb10">
                 <div className="col-20 flex center-all">
-                  <img className="image-size-adjust border-radius" src={random.details.image_url} alt={random.details.name} />
+                  <img className="image-size-adjust border-radius" src={this.state.random.details.image_url} alt={this.state.random.details.name} />
                 </div>
                 <div className="col-80 center-all">
                   <div className="row">
-                    {random.details.name}
+                    {this.state.random.details.name}
                   </div>
                   <div className="row">
 
-                    <div className="col-one-thirds"><ReactStars value={random.details.rating} edit={false} isHalf={true} /></div>
-                    <div className="col-one-thirds">{random.details.review_count}</div>
-                    <div className="col-one-thirds">{random.details.price}</div>
+                    <div className="col-one-thirds"><ReactStars value={this.state.rating} edit={false} isHalf={true} /></div>
+                    <div className="col-one-thirds">{this.state.random.details.review_count}</div>
+                    <div className="col-one-thirds">{this.state.random.details.price}</div>
                   </div>
                   <div className="row overflow">
-                    {`${random.details.location.address1}, ${random.details.location.city}, ${random.details.location.state} ${random.details.location.zip_code}`}
+                    {`${this.state.random.details.location.address1}, ${this.state.random.details.location.city}, ${this.state.random.details.location.state} ${this.state.random.details.location.zip_code}`}
                   </div>
                 </div>
               </div>
             </div>
-
             <div className="row close-button-row">
               <button onClick={this.toggleOff} className="close-button">Close</button>
             </div>
 
          </div>
-        </div>
+            </>
+            }
+            </div>
 
         <div className="container search-results-container restrict-height">
           <ul className="row justify-center">
