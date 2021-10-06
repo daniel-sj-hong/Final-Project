@@ -20,22 +20,17 @@ app.use(JSONMiddleware);
 
 app.use(staticMiddleware);
 
-app.get('/api/categories', (req, res) => {
+app.get('/api/categories', (req, res, next) => {
   const sql = `
     select *
-      from "public"."Categories";
+      from "Categories";
   `;
   db.query(sql)
     .then(result => {
       const list = result.rows;
       res.json(list);
     })
-    .catch(err => {
-      console.error(err);
-      res.status(500).json({
-        error: 'An unexpected error occurred.'
-      });
-    });
+    .catch(err => next(err));
 });
 
 app.get('/api/business', (req, res, next) => {

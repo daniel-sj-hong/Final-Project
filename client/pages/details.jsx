@@ -70,9 +70,6 @@ export default class Details extends React.Component {
 
   render() {
     if (this.state.isLoading) return null;
-    const timestamp = this.state.reviews[0].time_created;
-    const date = new Date(timestamp);
-    const dateFormated = format(date, 'MM/dd/yyyy');
     return (
       <>
         <Header />
@@ -135,7 +132,7 @@ export default class Details extends React.Component {
                         <ReactStars size={15} value={comments.rating} edit={false} isHalf={true} />
                       </div>
                       <div className="col-one-thirds flex center-all">
-                        <p>{dateFormated}</p>
+                        <p>{format(new Date(comments.time_created), 'MM/dd/yyyy')}</p>
                       </div>
                     </div>
                     <div className="row">
