@@ -50,6 +50,7 @@ export default class Favorites extends React.Component {
     }
 
     const random = this.state.favorites[Math.floor(Math.random() * this.state.favorites.length)];
+    console.log(random);
     return (
       <>
         <Header />
@@ -69,6 +70,7 @@ export default class Favorites extends React.Component {
                     {random.details.name}
                   </div>
                   <div className="row">
+
                     <div className="col-one-thirds"><ReactStars value={random.details.rating} edit={false} isHalf={true} /></div>
                     <div className="col-one-thirds">{random.details.review_count}</div>
                     <div className="col-one-thirds">{random.details.price}</div>

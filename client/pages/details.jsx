@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from '../components/header';
 import ReactStars from 'react-rating-stars-component';
-import { format } from 'date-fns';
+import { format, parse } from 'date-fns';
 
 export default class Details extends React.Component {
   constructor(props) {
@@ -132,7 +132,7 @@ export default class Details extends React.Component {
                         <ReactStars size={15} value={comments.rating} edit={false} isHalf={true} />
                       </div>
                       <div className="col-one-thirds flex center-all">
-                        <p>{format(new Date(comments.time_created), 'MM/dd/yyyy')}</p>
+                        <p>{format(parse(comments.time_created, 'yyyy-MM-dd HH:mm:ss', new Date()), 'MM/dd/yyyy')}</p>
                       </div>
                     </div>
                     <div className="row">
