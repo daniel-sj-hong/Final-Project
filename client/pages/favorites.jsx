@@ -88,10 +88,10 @@ export default class Favorites extends React.Component {
               <button onClick={this.toggleOff} className="close-button">Close</button>
             </div>
 
-         </div>
-            </>
+          </div>
+        </>
             }
-            </div>
+        </div>
 
         <div className="container search-results-container restrict-height">
           <ul className="row justify-center">
