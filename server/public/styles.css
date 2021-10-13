@@ -322,7 +322,7 @@ body {
 }
 
 .list-item:hover {
-  background-color: aqua;
+  background-color: #5f9aa4;
 }
 
 .list-item:hover a {
