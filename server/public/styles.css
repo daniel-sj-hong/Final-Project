@@ -325,6 +325,11 @@ body {
   background-color: aqua;
 }
 
+.list-item:hover a {
+  color: white;
+  transition: all 0.5s;
+}
+
 .favorites-text {
   margin-bottom: 8px;
   margin-right: 9em;
