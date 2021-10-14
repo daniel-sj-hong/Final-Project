@@ -7,13 +7,13 @@ I built this application because I often find myself in a group of friends and w
 [Live Demo](https://choice-ly.herokuapp.com/#)
 
 ### Selecting a food category that you're interested in
-![categories](https://user-images.githubusercontent.com/80491609/136467672-0e033db5-5c6e-418d-8df3-d1fc536ddeaf.gif)
+![categories](https://user-images.githubusercontent.com/80491609/137402905-ffc2ef92-04dd-40f1-957f-2ce347e512d4.gif)
 ### Viewing the details of a restaurant you're interested in
-![details](https://user-images.githubusercontent.com/80491609/136467805-5c4f2491-eebb-423c-ab8b-0fe068ac6137.gif)
+![details](https://user-images.githubusercontent.com/80491609/137402937-518db01e-2a97-4465-bbc3-6c2f1349678a.gif)
 ### Favoriting a restaurant and viewing your favorited list
-![favorite](https://user-images.githubusercontent.com/80491609/136467859-9a0f3918-c14a-48b8-ae5d-95c17c5e6404.gif)
+![favorite](https://user-images.githubusercontent.com/80491609/137402951-fdd55dac-e498-495e-904a-cd0bea0527d8.gif)
 ### Randomizer
-![randomize](https://user-images.githubusercontent.com/80491609/136467939-1841ee32-2fa9-4043-acad-e3b2078f413b.gif)
+![randomize](https://user-images.githubusercontent.com/80491609/137402973-5f4c5219-5828-4957-9d0e-64d1017985c6.gif)
 
 ## Technologies
 
