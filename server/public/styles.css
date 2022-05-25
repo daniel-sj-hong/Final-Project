@@ -42,7 +42,7 @@ input {
 .categories {
   background-color: #e1f6fc;
   width: 350px;
-  height: 600px;
+  height: 540px;
   margin-top: 20px;
   border-radius: 20px;
   flex-wrap: wrap;
@@ -474,7 +474,7 @@ body {
 
   .search-results-container {
     width: 500px;
-    height: 650px;
+    height: 600px;
   }
 
   .favorites-text {
