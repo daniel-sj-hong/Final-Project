@@ -79,4 +79,6 @@ I built this application because I often find myself in a group of friends and w
     npm run dev
     ```
 <a href="https://github.com/daniel-sj-hong"><img src="https://avatars.githubusercontent.com/u/80491609?v=4" title="Daniel Hong" width="80" height="80"></a>
+<div>
 <a href="https://github.com/daniel-sj-hong">Daniel Hong</a>
+</div>
