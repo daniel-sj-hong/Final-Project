@@ -80,3 +80,6 @@ I built this application because I often find myself in a group of friends and w
     ```
 
 <a href="https://github.com/daniel-sj-hong"><img src="https://avatars.githubusercontent.com/u/80491609?v=4" title="Daniel Hong" width="80" height="80">Daniel Hong</a>
+<a href="https://github.com/k-schrattenholzer"><img src="https://avatars.githubusercontent.com/u/54855300?v=4" title="Katie Schrattenholzer" width="80" height="80">Katie Schrattenholzer</a>
+<a href="https://github.com/sparsell"><img src="https://avatars.githubusercontent.com/u/52385888?v=4" title="Sonja Parsell" width="80" height="80">Sonja Parsell</a>
+<a href="https://github.com/artsycoder533"><img src="https://avatars.githubusercontent.com/u/83678228?v=4" title="Natasha Johnson" width="80" height="80">Natasha Johnson</a>
