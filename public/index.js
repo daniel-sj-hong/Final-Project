@@ -20,6 +20,10 @@ app.use(JSONMiddleware);
 
 app.use(staticMiddleware);
 
+app.get('/', (req, res) => {
+  res.send('Welcome to the Choice.ly API!');
+});
+
 app.get('/api/categories', (req, res, next) => {
   const sql = `
     select *
