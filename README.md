@@ -1,10 +1,12 @@
+**DUE TO HEROKU'S FREE TIER DISAPPEARING, THIS PROJECT IS NO LONGER HOSTED. I AM TRYING TO GET THIS PROJECT DEPLOYED ON FIREBASE, BUT THERE'S COMPLICATIONS AND ONLY A FRACTION OF MY APP APPEARS CURRENTLY**
+
 # Choice.ly
 
 A web application for people that need help deciding where to eat.
 
 I built this application because I often find myself in a group of friends and we are all very indecisive on where to eat. This application lets you view certain restaurants that you might be interested in, favorite them onto a favorites list, and then have a randomizer select a random restaurant among your favorited restaurants for you.
 
-[Live Demo](https://choice-ly.herokuapp.com/#)
+[Live Demo](https://final-project-choicely.web.app/) (CURRENTLY DOES NOT WORK)
 
 ### Selecting a food category that you're interested in
 ![categories](https://user-images.githubusercontent.com/80491609/137402905-ffc2ef92-04dd-40f1-957f-2ce347e512d4.gif)
